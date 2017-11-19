@@ -52,7 +52,7 @@ class main
         $record = new todo();
         $record->id=101;
         $record->owneremail="vm368@njit.edu";
-        $record->message="cs class";
+        $record->message="PDO Active records";
         $record->save();
 		
 		//print after save ----->
@@ -62,7 +62,8 @@ class main
         //delete one record @vm368---->
         
         $record= new todo();
-        $record->delete(171);
+        $record->delete(104);
+	$records=todos::findAll();
 	$tableGen = htmlTable::genarateTable($records);
         
     
