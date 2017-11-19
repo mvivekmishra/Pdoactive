@@ -1,6 +1,6 @@
 <?php
 class model {
-	protected $id;
+    protected $id;
     public function save(){
 		
 		$array = get_object_vars($this);
@@ -15,7 +15,7 @@ class model {
            $sql = $this->insert();
 		  // echo 'id is not null';
         }
-		return;
+		
         $db = dbConn::getConnection();
         $statement = $db->prepare($sql);
         $array = get_object_vars($this);
@@ -54,9 +54,9 @@ class model {
                 $comma = ", ";
             }
         }
-        $sql .= ' WHERE id='.$t;
+        $sql .= ' WHERE id='.$this->id;
         echo $sql;
-		return $sql;
+	return $sql;
     }
     public function delete($di) {
 		$array = get_object_vars($this);
