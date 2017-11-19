@@ -24,47 +24,46 @@ class main
 		
         //Print complete record set @vm368---->
 		
-		$records = todos::findAll();
+	$records = todos::findAll();
         $tableGen = htmlTable::genarateTable($records);
         
         //Print One record @vm368---->
 		
-		$id=124;
+	$id=124;
         $records = todos::findOne($id);
-		$tableGen = htmlTable::genarateTable($records);
+	$tableGen = htmlTable::genarateTable($records);
         
         //insert one record @vm368----->
         
         $record = new todo();
         $record->id=' ';
-		$record->owneremail="vm368@njit.edu";
+	$record->owneremail="vm368@njit.edu";
         $record->ownerid=11;
         $record->createddate="00-00-xxxx";
         $record->duedate="xx-xx-xxxx";
         $record->message="hello";
         $record->isdone=1;
-		$record->save();
+	$record->save();
         $records = todos::findAll();
-		$tableGen = htmlTable::genarateTable($records);
+	$tableGen = htmlTable::genarateTable($records);
         
         //update one record @vm368----->
         
-        $id=1010;
         $record = new todo();
-        $record->id=$id;
+        $record->id=101;
         $record->owneremail="vm368@njit.edu";
         $record->message="cs class";
         $record->save();
 		
 		//print after save ----->
-		$records = todos::findAll();
-		$tableGen = htmlTable::genarateTable($records);
+	$records = todos::findAll();
+	$tableGen = htmlTable::genarateTable($records);
         
         //delete one record @vm368---->
         
         $record= new todo();
         $record->delete(171);
-		$tableGen = htmlTable::genarateTable($records);
+	$tableGen = htmlTable::genarateTable($records);
         
     
 	}
